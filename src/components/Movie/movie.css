@@ -1,34 +1,35 @@
-/* new css for movie component */
-.movies {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
 .movie {
-    padding: 5px 25px 10px 25px;
-    max-width: 20%;
+    max-width: 80%;
 }
 
 .movie-image {
     height: 250px;
 }
 
-@media screen and (min-width: 694px) and (max-width: 915px) {
+@media screen and (min-width: 694px) and (max-width: 990px) {
     .movie {
-        max-width: 33%;
+        max-width: 90%;
     }
 }
 
-@media screen and (min-width: 652px) and (max-width: 693px) {
+@media screen and (min-width: 574px) and (max-width: 767px) {
     .movie {
         max-width: 50%;
-    }
-}
-
-@media screen and (max-width: 651px) {
-    .movie {
-        max-width: 100%;
         margin: auto;
     }
 }
+
+@media screen and (min-width: 444px) and (max-width: 574px) {
+    .movie {
+        max-width: 60%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .movie {
+        max-width: 70%;
+        margin: auto;
+    }
+}
+

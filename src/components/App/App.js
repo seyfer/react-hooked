@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import Movie from '../Movie/Movie';
 import Search from '../Search';
 import AppPagination from '../AppPagination/AppPagination';
 import {Alert, Col, Container, Row} from 'react-bootstrap';
+import MovieList from '../MovieList/MovieList';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -88,17 +88,7 @@ const App = () => {
                         <Alert variant={'light'}>
                             <h3>Sharing a few of our favourite movies</h3>
                         </Alert>
-                        <div className="movies">
-                            {loading && !errorMessage ? (
-                                <span>loading...</span>
-                            ) : errorMessage ? (
-                                <div className="errorMessage">{errorMessage}</div>
-                            ) : (
-                                    movies.map((movie, index) => (
-                                        <Movie key={`${index}-${movie.Title}`} movie={movie} />
-                                    ))
-                                )}
-                        </div>
+                        <MovieList loading={loading} errorMessage={errorMessage} movies={movies} />
                     </Col>
                 </Row>
             </Container>
