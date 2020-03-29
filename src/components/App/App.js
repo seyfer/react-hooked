@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-import Header from './Header';
-import Movie from './Movie';
-import Search from './Search';
-import AppPagination from './AppPagination';
+import Header from '../Header/Header';
+import Movie from '../Movie/Movie';
+import Search from '../Search';
+import AppPagination from '../AppPagination/AppPagination';
 import {Alert, Col, Container, Row} from 'react-bootstrap';
 
 const App = () => {
@@ -65,7 +65,7 @@ const App = () => {
     const renderedPagination = (
         <Row>
             <Col md={12}>
-                <AppPagination pageChange={handlePageChange} totalPages={totalPages} />
+                <AppPagination pageChange={handlePageChange} totalPages={totalPages} pageValue={pageValue} />
             </Col>
         </Row>
     );
@@ -75,13 +75,14 @@ const App = () => {
             <Header text="HOOKED" />
             <Container>
                 <Row>
-                    <Col md={12}><Search search={handleSearchChange} /></Col>
+                    <Col md={12}><Search search={handleSearchChange} pageChange={handlePageChange} pageValue={pageValue}
+                                         totalPages={totalPages} /></Col>
                 </Row>
                 {renderedPagination}
                 <Row>
                     <Col md={12}>
                         <Alert variant={'light'}>
-                            <h3 className="App-intro">Sharing a few of our favourite movies</h3>
+                            <h3>Sharing a few of our favourite movies</h3>
                         </Alert>
                         <div className="movies">
                             {loading && !errorMessage ? (
