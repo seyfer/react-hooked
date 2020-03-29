@@ -11,12 +11,15 @@ const Movie = ({movie}) => {
         <div className="movie">
             <Card.Header>{movie.Title}</Card.Header>
             <Card>
-                <Card.Img height={333} variant="top"
+                <Card.Img className="movie-image"
+                          variant="top"
                           alt={`The movie titled: ${movie.Title}`}
                           src={poster} />
                 <Card.Body>
                     <Card.Title>({movie.Year})</Card.Title>
-                    <Card.Link href={'https://www.imdb.com/title/' + movie.imdbID} target="_blank">Open on IMBD</Card.Link>
+                    <Card.Link href={'https://www.imdb.com/title/' + movie.imdbID} target="_blank">
+                        Open on IMBD
+                    </Card.Link>
                 </Card.Body>
             </Card>
         </div>

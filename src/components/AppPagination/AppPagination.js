@@ -43,8 +43,10 @@ const AppPagination = props => {
 
     const pagesRendered = pages().map((value, index) => {
         return (
-            <Pagination.Item key={index} active={Number(value) === Number(props.pageValue)}
-                             onClick={(_) => handlePageClick(value)}>
+            <Pagination.Item key={index}
+                             active={Number(value) === Number(props.pageValue)}
+                             onClick={(_) => handlePageClick(value)}
+            >
                 {value}
             </Pagination.Item>
         );

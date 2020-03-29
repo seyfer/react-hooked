@@ -75,8 +75,12 @@ const App = () => {
             <Header text="HOOKED" />
             <Container>
                 <Row>
-                    <Col md={12}><Search search={handleSearchChange} pageChange={handlePageChange} pageValue={pageValue}
-                                         totalPages={totalPages} /></Col>
+                    <Col md={12}>
+                        <Search search={handleSearchChange}
+                                pageChange={handlePageChange}
+                                pageValue={pageValue}
+                                totalPages={totalPages} />
+                    </Col>
                 </Row>
                 {renderedPagination}
                 <Row>

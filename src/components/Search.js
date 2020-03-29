@@ -34,10 +34,15 @@ const Search = props => {
                 <Col md={10}>
                     <Form>
                         <InputGroup>
-                            <Form.Control type="text" placeholder="enter any value" value={searchValue}
+                            <Form.Control type="text"
+                                          placeholder="enter any value"
+                                          value={searchValue}
                                           onChange={handleSearchInputChanges} />
                             <InputGroup.Append>
-                                <Button variant="primary" type="submit" onClick={callSearchFunction}>
+                                <Button variant="primary"
+                                        type="submit"
+                                        onClick={callSearchFunction}
+                                >
                                     SEARCH
                                 </Button>
                             </InputGroup.Append>
@@ -47,10 +52,9 @@ const Search = props => {
                 <Col md={2}>
                     <Form>
                         <InputGroup>
-                            <Form.Control
-                                value={props.pageValue}
-                                onChange={handlePageInputChanges}
-                                type="number"
+                            <Form.Control value={props.pageValue}
+                                          onChange={handlePageInputChanges}
+                                          type="number"
                             />
                             <InputGroup.Append>
                                 <Button onClick={callSearchFunction} type="submit">PAGE</Button>
